@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(897, 373)
+        MainWindow.resize(897, 359)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.layoutWidget = QtWidgets.QWidget(self.centralwidget)
@@ -50,6 +50,9 @@ class Ui_MainWindow(object):
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
         spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_3.addItem(spacerItem)
+        self.timeEdit = QtWidgets.QTimeEdit(self.layoutWidget1)
+        self.timeEdit.setObjectName("timeEdit")
+        self.horizontalLayout_3.addWidget(self.timeEdit)
         self.add_task = QtWidgets.QPushButton(self.layoutWidget1)
         self.add_task.setObjectName("add_task")
         self.horizontalLayout_3.addWidget(self.add_task)

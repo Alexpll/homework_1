@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>897</width>
-    <height>373</height>
+    <height>359</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -75,6 +75,9 @@
         </size>
        </property>
       </spacer>
+     </item>
+     <item>
+      <widget class="QTimeEdit" name="timeEdit"/>
      </item>
      <item>
       <widget class="QPushButton" name="add_task">

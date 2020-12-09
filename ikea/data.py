@@ -26,7 +26,6 @@ class TableForm(QMainWindow, Ui_MainWindow):
             for j in range(self.tableWidget.columnCount()):
                 self.tableWidget.item(i, j).setBackground(color)
 
-
     def load_table(self, file_name):
         with open(file_name, encoding="utf8") as csvfile:
             reader = csv.reader(csvfile, delimiter=';', quotechar='"')

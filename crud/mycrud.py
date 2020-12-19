@@ -24,7 +24,7 @@ class CreateForm(QDialog, Ui_Dialog):
         database_connection = sqlite3.connect(self.mydb)
         cursor = database_connection.cursor()
         print(id_salon, id_salons)
-        if str(id_salon) not in id_salons and id_salon and name_salon and opening and address:
+        if str(id_salon) not in id_salons and id_salon and name_salon and opening and address and id_salon.isdigit():
             cursor.execute(f'''INSERT INTO salon VALUES (?, ?, ?, ?)''', (id_salon, name_salon, opening, address))
             database_connection.commit()
             database_connection.close()
@@ -64,6 +64,7 @@ class TableForm(QMainWindow, Ui_MainWindow):
             for j, elem in enumerate(film):
                 self.tableWidget.setItem(i, j, QTableWidgetItem(str(elem)))
         self.tableWidget.resizeColumnsToContents()
+        self.tableWidget.sortItems(0, order=QtCore.Qt.AscendingOrder)
         database_connection.close()
 
     def save_table(self, item):
@@ -125,6 +126,7 @@ class TableForm(QMainWindow, Ui_MainWindow):
             self.tableWidget.setItem(rows, 2, QTableWidgetItem(str(per[2])))
             self.flag = True
             self.tableWidget.setItem(rows, 3, QTableWidgetItem(str(per[3])))
+            self.tableWidget.sortItems(0, order=QtCore.Qt.AscendingOrder)
 
 
 per = []
